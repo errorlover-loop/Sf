@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silverfox Cafe KL</title>
+  <meta name="description" content="Silverfox Cafe KL — Brunch • Coffee • Dessert | Jalan Doraisamy, Chow Kit, Kuala Lumpur">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep slate */
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#cbd5e1; /* silver */
+      --accent-2:#a3b5c6;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --max-w:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071021 0%, var(--bg) 60%);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* layout */
+    .wrap{max-width:var(--max-w);margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#d0d7df,#8d99a6);display:flex;align-items:center;justify-content:center;color:#0b1220;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(11,18,32,0.6)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.6px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{color:var(--accent);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:var(--glass)}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .hero h2{font-size:36px;margin:0 0 8px}
+    .hero p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--accent);font-weight:700;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,#e6eef6, #cfe0eb);color:#071126;border:none}
+
+    /* info card */
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .info-card{background:var(--card);padding:14px;border-radius:12px}
+    .info-card h4{margin:0 0 6px;font-size:14px}
+    .info-card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* menu */
+    section.menu{margin-top:28px}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .menu-item{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+    .menu-item h5{margin:0 0 6px}
+    .menu-item p{margin:0 0 8px;color:var(--muted);font-size:14px}
+    .price{font-weight:700}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:28px}
+    .contact form{background:var(--card);padding:18px;border-radius:12px}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    label{font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);outline:none}
+    textarea{min-height:110px}
+
+    footer{margin:28px 0 80px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .gallery img{height:120px}
+      .card-grid{grid-template-columns:repeat(2,1fr)}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      nav{display:none}
+      header{align-items:flex-start}
+      .logo{width:52px;height:52px}
+      .card-grid{grid-template-columns:1fr}
+      .menu-grid{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SF</div>
+        <div>
+          <h1>Silverfox Cafe KL</h1>
+          <p class="muted">Jalan Doraisamy, Chow Kit — Brunch • Coffee • Dessert</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="panel">
+          <h2>Welcome to Silverfox Cafe KL</h2>
+          <p class="lead">A modern, minimalist cafe in the heart of Chow Kit. Specialty coffee, creative brunch plates, and desserts crafted for the feed — and the palate.</p>
+
+          <div class="card-grid">
+            <div class="info-card">
+              <h4>Opening Hours</h4>
+              <p class="muted">Daily • 10:30 AM — 11:00 PM</p>
+            </div>
+            <div class="info-card">
+              <h4>Location</h4>
+              <p class="muted">Jalan Doraisamy, Chow Kit — Near Dang Wangi MRT</p>
+            </div>
+            <div class="info-card">
+              <h4>Contact</h4>
+              <p class="muted">+60 11-6200 6038</p>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;" class="cta">
+            <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Reserve a Table</button>
+            <a class="btn" href="#menu">See Menu</a>
+          </div>
+        </div>
+
+        <aside style="position:relative">
+          <div class="panel" style="height:100%;display:flex;flex-direction:column;gap:12px;justify-content:space-between;">
+            <div>
+              <h3 style="margin:0 0 6px">Featured — Silver Fox Latte</h3>
+              <p class="muted" style="margin:0 0 12px">A signature latte with subtle floral notes and a shimmering dusted top.</p>
+              <div class="chip">Instagrammable • Signature</div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+              <div style="background:url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=') center/cover;border-radius:10px;height:140px"></div>
+              <div style="background:url('https://images.unsplash.com/photo-1548979156-8a6d1a5da9e0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=') center/cover;border-radius:10px;height:140px"></div>
+            </div>
+
+          </div>
+        </aside>
+      </section>
+
+      <section id="menu" class="menu">
+        <h3 style="margin:8px 0 12px">Menu Highlights</h3>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <h5>Silver Fox Latte <span class="price">RM 14</span></h5>
+            <p class="muted">Signature latte with delicate floral aroma & shimmering top.</p>
+          </article>
+
+          <article class="menu-item">
+            <h5>Charred Miso Salmon Bowl <span class="price">RM 28</span></h5>
+            <p class="muted">Served with seasonal greens and house yuzu sauce.</p>
+          </article>
+
+          <article class="menu-item">
+            <h5>Truffle Mushroom Toast <span class="price">RM 22</span></h5>
+            <p class="muted">Sourdough, wild mushrooms, truffle oil, and micro herbs.</p>
+          </article>
+
+          <article class="menu-item">
+            <h5>Matcha Mille Crepe <span class="price">RM 18</span></h5>
+            <p class="muted">House-made layers with a light, silky cream.</p>
+          </article>
+
+          <article class="menu-item">
+            <h5>Silverfox Cold Brew <span class="price">RM 12</span></h5>
+            <p class="muted">Small-batch cold brew — bright, clean finish.</p>
+          </article>
+
+          <article class="menu-item">
+            <h5>Avocado Smash Toast <span class="price">RM 16</span></h5>
+            <p class="muted">Citrus, chili flakes, and sesame seeds on toasted sourdough.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery-section">
+        <h3 style="margin:18px 0 12px">Gallery</h3>
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Cafe interior">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Dessert plate">
+          <img src="https://images.unsplash.com/photo-1526318472351-c75fcf0704d9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Coffee cup">
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div>
+          <h3 style="margin:0 0 8px">Get in touch / Reserve</h3>
+          <p class="muted" style="margin:0 0 12px">Call +60 11-6200 6038 or use the form to request a reservation. We'll confirm via email or phone.</p>
+
+          <div style="background:var(--card);padding:16px;border-radius:12px">
+            <h4 style="margin:0 0 8px">Location</h4>
+            <p class="muted" style="margin:0 0 10px">Jalan Doraisamy, Chow Kit, 50300 Kuala Lumpur</p>
+            <div style="width:100%;height:200px;border-radius:10px;overflow:hidden;background:#06101a;display:flex;align-items:center;justify-content:center;color:var(--muted)">Map placeholder</div>
+          </div>
+        </div>
+
+        <form onsubmit="return submitReserve(event)">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="Phone or WhatsApp" required>
+          </div>
+          <div class="field">
+            <label for="date">Date & time</label>
+            <input id="date" name="date" type="datetime-local" required>
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="note">Special requests (optional)</label>
+            <textarea id="note" name="note" placeholder="Dietary notes, celebration, seating preference..."></textarea>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;justify-content:flex-end">
+            <button class="btn" type="reset">Reset</button>
+            <button class="btn primary" type="submit">Request Reservation</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>Silverfox Cafe KL</strong>
+          <div class="muted">Jalan Doraisamy, Chow Kit • +60 11-6200 6038</div>
+        </div>
+        <div class="muted">Designed for web — Mobile friendly • Built with care</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function submitReserve(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const datetime = document.getElementById('date').value;
+      if(!name||!phone||!datetime){
+        alert('Please complete the required fields.');
+        return false;
+      }
+      // In a real deployment, send to server. For now we show a confirmation and reset form.
+      alert('Thanks '+name+" — your reservation request has been recorded. We'll contact you to confirm.\n(For a live site, connect this form to your backend or a service like Formspree / Netlify Forms.)");
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
